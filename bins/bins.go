@@ -1,4 +1,4 @@
-package main
+package bins
 
 import (
 	"time"
@@ -17,7 +17,7 @@ func main() {
 
 }
 
-func newBin(id, name string, private bool, createdAt time.Time) *Bin {
+func NewBin(id, name string, private bool, createdAt time.Time) *Bin {
 	return &Bin{
 		id:        id,
 		name:      name,

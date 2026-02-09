@@ -23,9 +23,14 @@ func ReadFile(name string) (*[]bins.Bin, error) {
 
 }
 
-func WriteFile(content []byte, name string) error {
+func WriteFile(js []bins.Bin, name string) error {
 
-	err := os.WriteFile(name, content, 0644)
+	content, err := json.Marshal(js)
+	if err != nil {
+		return err
+	}
+
+	err = os.WriteFile(name, content, 0644)
 	if err != nil {
 		return err
 	}
